@@ -8,6 +8,13 @@ import java.util.HashMap;
 
 public class Factory {
 
+    private static Factory instance;
+
+    public static Factory getInstance(){
+        if (instance==null)
+            instance = new Factory();
+        return instance;
+    }
     HashMap<String, Command> cache;
 
     public Command getCommand(String sCMD) {
@@ -20,6 +27,7 @@ public class Factory {
 
         return cmd;
     }
+
 
     private Command loadClass(String sCMD) {
         Command cmd=null;
