@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class Comand_Test {
+public class Command_Test {
 
     @Test
 
