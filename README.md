@@ -1,0 +1,1 @@
+Exercici de classe Factory (amb singleton)
