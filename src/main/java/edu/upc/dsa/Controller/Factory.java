@@ -1,7 +1,6 @@
 package edu.upc.dsa.Controller;
 
 import org.apache.log4j.Logger;
-
 import java.util.HashMap;
 
 public class Factory {
@@ -33,12 +32,15 @@ public class Factory {
     {
         Command cmd=null;
         try {
+            log.info("Començant la funció loadClass");
+
             Class c = Class.forName("edu.upc.dsa.Model."+sCMD);
             cmd = (Command) c.newInstance();
+            log.info(("S'ha creat la clase"+sCMD));
         }
         catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex)
         {
-
+log.warn("caguen la puta");
         }
 
         return cmd;
