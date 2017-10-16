@@ -32,7 +32,8 @@ public class Factory {
             Class c = Class.forName("edu.upc.dsa.Model."+sCMD);
             cmd = (Command) c.newInstance();
         }
-        catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex){
+        catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex)
+        {
 
         }
 
