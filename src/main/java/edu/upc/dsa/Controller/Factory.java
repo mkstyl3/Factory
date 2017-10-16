@@ -1,9 +1,5 @@
 package edu.upc.dsa.Controller;
 
-import edu.upc.dsa.Model.C1;
-import edu.upc.dsa.Model.C2;
-import edu.upc.dsa.Model.C3;
-
 import java.util.HashMap;
 
 public class Factory {
@@ -29,12 +25,19 @@ public class Factory {
     }
 
 
-    private Command loadClass(String sCMD) {
+    private Command loadClass(String sCMD)
+    {
         Command cmd=null;
+        try {
+            Class c = Class.forName("edu.upc.dsa.Model."+sCMD);
+            cmd = (Command) c.newInstance();
+        }
+        catch (ClassNotFoundException | IllegalAccessException | InstantiationException ex){
 
-        if (sCMD.equals("C1")) cmd = new C1();
-        else if (sCMD.equals("C2")) cmd = new C2();
-        else if (sCMD.equals("C3")) cmd = new C3();
+        }
+
+
+
 
         return cmd;
 
