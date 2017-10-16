@@ -1,10 +1,14 @@
 package edu.upc.dsa.Controller;
 
+import org.apache.log4j.Logger;
+
 import java.util.HashMap;
 
 public class Factory {
 
     private static Factory instance;
+
+    final static Logger log = Logger.getLogger(Factory.class.getName());
 
     public static Factory getInstance(){
         if (instance==null)
@@ -36,9 +40,6 @@ public class Factory {
         {
 
         }
-
-
-
 
         return cmd;
 
