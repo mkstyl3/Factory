@@ -1,38 +1,28 @@
 package edu.upc.dsa;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
+import edu.upc.dsa.Controller.Factory;
+import org.junit.Assert;
+import org.junit.Test;
+
+
+public class Comand_Test {
+
+    @Test
+
+    public void getCommandTest()
     {
-        super( testName );
+
+        int command1 = Factory.getInstance().getCommand("C1").execute();
+        Assert.assertEquals(command1,1);
+
+        int command2 = Factory.getInstance().getCommand("C2").execute();
+        Assert.assertEquals(command2,2);
+
+        int command3 = Factory.getInstance().getCommand("C3").execute();
+        Assert.assertEquals(command3,3);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+
 }
