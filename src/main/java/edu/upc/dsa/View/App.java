@@ -1,4 +1,4 @@
-package edu.upc.dsa;
+package edu.upc.dsa.View;
 
 /**
  * Hello world!
